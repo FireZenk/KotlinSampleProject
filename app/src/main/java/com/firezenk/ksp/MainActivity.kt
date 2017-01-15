@@ -32,8 +32,11 @@ class MainActivity : AppCompatActivity() {
         forecastList.layoutManager = LinearLayoutManager(this)
         forecastList.adapter = ForecastListAdapter(items)
 
+        val url = "http://api.openweathermap.org/data/2.5/forecast/daily?" +
+                "APPID=15646a06818f61f7b8d7823ca833e1ce&q=94043&mode=json&units=metric&cnt=7"
+
         async() {
-            Request("https://github.com/FireZenk/KotlinSampleProject").run()
+            Request(url).run()
             uiThread {
                 toast("Request performed")
             }
