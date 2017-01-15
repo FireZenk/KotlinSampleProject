@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import org.jetbrains.anko.async
 
 import org.jetbrains.anko.find
@@ -40,5 +41,9 @@ class MainActivity : AppCompatActivity() {
 
         val f1 = Forecast(Date(), 27.5f, "Shiny day")
         val f2 = f1.copy(temperature = 30f)
+
+        val (date, temperature, details) = f1
+
+        Log.d(javaClass.simpleName, "$date $temperature $details")
     }
 }
