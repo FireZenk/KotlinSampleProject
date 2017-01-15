@@ -2,7 +2,7 @@ package com.firezenk.ksp.domain
 
 import com.firezenk.ksp.data.ResponseClasses
 import java.text.DateFormat
-import java.util.*
+import java.util.Locale
 
 class ForecastDataMapper {
 
