@@ -9,6 +9,7 @@ import org.jetbrains.anko.async
 import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.uiThread
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val forecastList : RecyclerView = find(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
         forecastList.adapter = ForecastListAdapter(items)
@@ -35,5 +37,8 @@ class MainActivity : AppCompatActivity() {
                 toast("Request performed")
             }
         }
+
+        val f1 = Forecast(Date(), 27.5f, "Shiny day")
+        val f2 = f1.copy(temperature = 30f)
     }
 }
