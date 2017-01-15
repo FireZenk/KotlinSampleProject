@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
+import com.firezenk.ksp.data.ForecastRequest
 import org.jetbrains.anko.async
 
 import org.jetbrains.anko.find
@@ -36,9 +37,9 @@ class MainActivity : AppCompatActivity() {
                 "APPID=15646a06818f61f7b8d7823ca833e1ce&q=94043&mode=json&units=metric&cnt=7"
 
         async() {
-            Request(url).run()
+            ForecastRequest(url).execute()
             uiThread {
-                toast("Request performed")
+                toast("ForecastRequest performed")
             }
         }
 
